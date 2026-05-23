@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>YouTube Interval Looper</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="shell" aria-labelledby="title">
+      <header class="header">
+        <div>
+          <h1 id="title">Interval Looper</h1>
+          <p id="pageState" class="subtle">Checking this tab...</p>
+        </div>
+        <span id="loopBadge" class="badge" aria-live="polite">Idle</span>
+      </header>
+
+      <section class="field-group" aria-label="Loop timestamps">
+        <label class="field">
+          <span>Start</span>
+          <div class="input-row">
+            <input id="startInput" type="text" inputmode="numeric" autocomplete="off" placeholder="00:30">
+            <button id="useStartButton" class="secondary" type="button">Use Current</button>
+          </div>
+        </label>
+
+        <label class="field">
+          <span>End</span>
+          <div class="input-row">
+            <input id="endInput" type="text" inputmode="numeric" autocomplete="off" placeholder="01:15">
+            <button id="useEndButton" class="secondary" type="button">Use Current</button>
+          </div>
+        </label>
+      </section>
+
+      <div class="actions">
+        <button id="startButton" class="primary" type="button">Start Loop</button>
+        <button id="stopButton" class="ghost" type="button">Stop</button>
+      </div>
+
+      <section class="panel-controls" aria-label="Page panel">
+        <button id="pagePanelButton" class="secondary wide" type="button">Show Page Panel</button>
+      </section>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </main>
+
+    <script src="../utils/time.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
